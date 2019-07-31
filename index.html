@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Assignment</title>
+<!-- <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+ -->
+<link rel="stylesheet" type="text/css" href="css/style.css"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Barriecito|Special+Elite&display=swap&subset=latin-ext" rel="stylesheet">
+</head>
+<body>
+	<div class="icon-bar">
+	  <a href="https://facebook.com" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+	  <a href="https://google.com" class="google" target="_blank"><i class="fa fa-google"></i></a>
+	  <a href="https://youtube.com" class="youtube" target="_blank"><i class="fa fa-youtube"></i></a>
+	</div>
+	<header class="bg-white">
+		<div class="container">
+			<div class="flex">
+				<div>
+					<i class="fas fa-clock" style="font-size:24px;"></i>
+					<i class="fas fa-clock" style="font-size:36px;"></i>
+					<i class="fas fa-clock" style="font-size:48px;color:red;"></i>
+					<i class="fas fa-clock" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i>
+				</div>
+	        	<div class="logo"><a href="index.html"><p><i class="fab fa-critical-role fa-spin" style=" font-size: 50px;"></i></p><strong  style="font-family: 'Barriecito', cursive;font-size: 27px;">Netword Programming</strong></a>
+	        	</div>
+	        	<div>
+					<i class="fa fa-cloud" style="font-size:24px;"></i>
+					<i class="fa fa-cloud" style="font-size:36px;"></i>
+					<i class="fa fa-cloud" style="font-size:48px;color:red;"></i>
+					<i class="fa fa-cloud" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i>
+	        	</div>
+	        </div>	
+    	</div>
+  	</header>
+	<div class="login-form">
+	    <form action="/index.html" method="post" enctype="multipart/form-data">
+	    	<h2 class="text-center" style="font-family: 'Special Elite', cursive;">Send email</h2>
+	        <div class="form-group two-input">
+	            <input type="email" class="form-control" name="Email" placeholder="Email" required/>
+	            <input type="password" class="form-control" name="Password" placeholder="Password" required/>
+	        </div>
+	        <div class="form-group one-input">
+				<input  name="sendto" class="form-control message" placeholder="To" required/>
+	        </div>
+	        <div class="form-group two-input">
+	            <input type="text" class="form-control" name="Subject" placeholder="Subject" />
+	        </div>
+	        <div class="form-group one-input">
+	            <textarea name="message" class="form-control message" placeholder="Message" rows="5"></textarea>
+	            <input type="file" name="filename" style="color: red;" multiple>
+	        </div>
+	        <div class="button-sets">
+	            <button class="btn" type="reset" ><span>Reset <i class="fa fa-refresh"></i></span></button>
+	            <button class="btn" type="submit" value="Upload"><span>Send <i class="fa fa-paper-plane"></i></span></button>
+	        </div>
+	    </form>
+	</div>
+</body>
+</html>                                		                            
