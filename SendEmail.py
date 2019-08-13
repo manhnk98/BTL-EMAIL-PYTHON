@@ -9,18 +9,16 @@ import os
 
 
 file_dir = "D:\\local"
-host = 'localhost'
+host = ''
 port = 8080
 
 
-def create_email_message(from_address, to_address, subject, msg_body, files=None, html=None):
+def create_email_message(from_address, to_address, subject, msg_body, files=None):
     msg = MIMEMultipart()
     msg['From'] = from_address
     msg['To'] = ",".join(to_address)
     msg['Subject'] = subject
-    msg.attach(MIMEText(msg_body, 'plain'))
-    if html is not None:
-        msg.attach(MIMEText(html, 'html'))
+    msg.attach(MIMEText(msg_body, 'html'))
     if files is not None:
         for file in files:
             try:
@@ -39,9 +37,7 @@ def create_email_message(from_address, to_address, subject, msg_body, files=None
 
 def handler_send_mail(self, form, lst_email, msg):
     try:
-        with smtplib.SMTP('smtp.gmail.com', port=587) as smtp_server:
-            smtp_server.ehlo()
-            smtp_server.starttls()
+        with smtplib.SMTP_SSL('smtp.gmail.com', port=465) as smtp_server:
             smtp_server.login(str(form['Email'].value), str(form['Password'].value))
             smtp_server.sendmail(str(form['Email'].value), lst_email, msg.as_string())
         print('send mail Success !!')
@@ -102,18 +98,16 @@ class Serv(BaseHTTPRequestHandler):
             fileitem = form['filename']
             lst_file_name = []
             if str(fileitem) != "FieldStorage('filename', '', b'')":
-                print("khac rong")
+                print("co tep dinh kem")
                 if str(type(fileitem)) == "<class 'cgi.FieldStorage'>":
-                    print("1 value !")
+                    print("oneFile")
                     send_multiple_files(fileitem, lst_file_name)
                 else:
-                    print("nhieu gia tri")
+                    print("multiFiles")
                     for file in fileitem:
                         send_multiple_files(file, lst_file_name)
-                    for s in lst_file_name:
-                        print("url : " + s)
             else:
-                print("rong")
+                print("Khong co tep dinh kem")
 
             msg = create_email_message(
                 from_address=str(form['Email'].value),
@@ -128,5 +122,7 @@ class Serv(BaseHTTPRequestHandler):
             return
 
 
-httpd = HTTPServer((host, port), Serv)
-httpd.serve_forever()
+if __name__ == '__main__':
+    httpd = HTTPServer((host, port), Serv)
+    httpd.serve_forever()
+
